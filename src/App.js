@@ -19,20 +19,21 @@ function App() {
   return (
     <div className="App" style={{ fontFamily: "Open Sans", width: "100%" }}>
       <div style={{ backgroundColor: "#131319", zIndex: 3 }}>
-        <div style={{ display: "inline-flex" }}>
-          <p
+        <div style={{ display: "inline" }}>
+          <Image
+            src="Logo.png"
+            alt="Ethan Robertson Website Logo"
             style={{
-              color: "white",
-              fontFamily: "Share Tech Mono",
-              fontSize: 60,
-              paddingTop: 60,
+              height: "auto",
+              width: "50%",
+              maxWidth: "700px",
+              paddingTop: "50px",
+              paddingBottom: "50px",
             }}
-          >
-            ethanrobertson<span style={{ color: "#2D96CE" }}>.</span>dev
-          </p>
+          />
           <Image
             src="images/consoleCursor.gif"
-            style={{ height: 37, width: 37, marginTop: 95 }}
+            style={{ height: "37px", width: "37px", marginTop: "18px" }}
           />
         </div>
         <Navbar
