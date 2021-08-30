@@ -33,7 +33,7 @@ function App() {
           />
           <Image
             src="images/consoleCursor.gif"
-            style={{ height: "37px", width: "37px", marginTop: "18px" }}
+            style={{ height: "2%", width: "2%", marginTop: "18px" }}
           />
         </div>
         <Navbar
