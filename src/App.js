@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App" style={{ fontFamily: "Open Sans", width: "100%" }}>
-      <div style={{ backgroundColor: "#131319", zIndex: 3 }}>
+      <div style={{ backgroundColor: "#10101c", zIndex: 3 }}>
         <div style={{ display: "inline" }}>
           <Image
             src="Logo.png"
@@ -37,7 +37,7 @@ function App() {
           />
         </div>
         <Navbar
-          style={{ backgroundColor: "#131319", justifyContent: "center" }}
+          style={{ backgroundColor: "#10101c", justifyContent: "center" }}
           expand="lg"
           variant="dark"
         >
