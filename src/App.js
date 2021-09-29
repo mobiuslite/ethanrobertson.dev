@@ -16,6 +16,11 @@ function App() {
     paddingRight: 40,
   };
 
+  const linkItemStyle = {
+    paddingRight: "1%",
+    paddingLeft: "1%",
+  };
+
   return (
     <div className="App" style={{ fontFamily: "Open Sans", width: "100%" }}>
       <div style={{ backgroundColor: "#10101c", zIndex: 3 }}>
@@ -28,13 +33,49 @@ function App() {
               width: "50%",
               maxWidth: "700px",
               paddingTop: "50px",
-              paddingBottom: "50px",
+              paddingBottom: "15px",
             }}
           />
           <Image
             src="images/consoleCursor.gif"
-            style={{ height: "2%", width: "2%", marginTop: "18px" }}
+            style={{ height: "2%", width: "2%", marginTop: "55px" }}
           />
+        </div>
+        <div style={{ paddingBottom: "35px" }}>
+          <a
+            href="https://github.com/mobiuslite/"
+            target="_blank"
+            rel="noreferrer"
+            style={linkItemStyle}
+          >
+            <img
+              src="GitHub-Mark-Light-32px.png"
+              alt="Github logo"
+              width="32"
+              height="32"
+            />
+          </a>
+          <a
+            href="https://steamcommunity.com/id/MobiusLite/"
+            target="_blank"
+            rel="noreferrer"
+            style={linkItemStyle}
+          >
+            <img src="Steam Icon.png" alt="Steam logo" width="32" height="32" />
+          </a>
+          <a
+            href="http://google.com"
+            target="_blank"
+            rel="noreferrer"
+            style={linkItemStyle}
+          >
+            <img
+              src="GitHub-Mark-Light-32px.png"
+              alt="pintrest logo"
+              width="32"
+              height="32"
+            />
+          </a>
         </div>
         <Navbar
           style={{ backgroundColor: "#10101c", justifyContent: "center" }}
