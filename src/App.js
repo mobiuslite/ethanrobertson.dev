@@ -2,12 +2,15 @@ import "./App.css";
 import "./custom.scss";
 
 import { Navbar, Nav, Image } from "react-bootstrap";
-import { Route, Link, Redirect } from "react-router-dom";
+import { Route, Link, Navigate, Routes } from "react-router-dom";
 import React, { lazy, Suspense } from "react";
 
 const Home = lazy(() => import("./Pages/Home"));
 const AboutMe = lazy(() => import("./Pages/AboutMe"));
 const Contact = lazy(() => import("./Pages/Contact"));
+const Games = lazy(() => import("./Pages/Games"));
+const Portfolio = lazy(() => import("./Pages/Portfolio"));
+
 const renderLoader = () => <p />;
 
 function App() {
@@ -63,19 +66,6 @@ function App() {
           >
             <img src="Steam Icon.png" alt="Steam logo" width="32" height="32" />
           </a>
-          <a
-            href="http://google.com"
-            target="_blank"
-            rel="noreferrer"
-            style={linkItemStyle}
-          >
-            <img
-              src="GitHub-Mark-Light-32px.png"
-              alt="pintrest logo"
-              width="32"
-              height="32"
-            />
-          </a>
         </div>
         <Navbar
           style={{ backgroundColor: "#10101c", justifyContent: "center" }}
@@ -108,6 +98,22 @@ function App() {
               </Nav.Link>
               <Nav.Link
                 as={Link}
+                href="#games"
+                to="/games"
+                style={navItemPadding}
+              >
+                <h2 className="customNavItem">Games</h2>
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                href="#portfolio"
+                to="/portfolio"
+                style={navItemPadding}
+              >
+                <h2 className="customNavItem">Portfolio</h2>
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
                 href="#contact"
                 to="/contact"
                 style={navItemPadding}
@@ -127,10 +133,15 @@ function App() {
         className="gradientPage"
       >
         <Suspense fallback={renderLoader()} style={{}}>
-          <Route exact path="/" render={() => <Redirect to="/home" />} />
-          <Route path="/home" render={() => <Home />} />
-          <Route path="/aboutme" render={() => <AboutMe />} />
-          <Route path="/contact" render={() => <Contact />} />
+        <Routes>
+          <Route exact path="/" element={<Navigate to="/home" />} />
+          <Route path="*" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/aboutme" element={<AboutMe />} />
+          <Route path="/games" element={<Games />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
         </Suspense>
       </div>
     </div>
