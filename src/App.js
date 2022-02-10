@@ -15,7 +15,10 @@ const renderLoader = () => <p />;
 
 function App() {
 
-  const [title, setTitle] = useState("dev")
+  const [title, setTitle] = useState("dev");
+  const [changedTitle, setChangedTitle] = useState(false);
+  const [showedFunnyJoke, setShowedFunnyJoke] = useState(false);
+
   const navItemPadding = {
     paddingLeft: 40,
     paddingRight: 40,
@@ -28,17 +31,27 @@ function App() {
 
   const typing = (event) => {
 
+    setChangedTitle(true);
+
+    let newTitle = title;
     //Stops from users being able to type using the alt, ctrl, and shift key
-    if (!event.altKey && !event.ctrlKey && event.key != "Enter") {
+    if (!event.altKey && !event.ctrlKey && event.key !== "Enter") {
 
       if (event.key === "Backspace" && title.length > 0) {
-        setTitle(title.substring(0, title.length - 1));
-
+        newTitle = title.substring(0, title.length - 1);
+        setTitle(newTitle);
       }
       else if (event.key !== "Backspace") {
-
         if ((event.shiftKey && event.key !== "Shift") || !event.shiftKey) {
-          setTitle(title + event.key);
+          newTitle = title + event.key;
+
+          //You put it back to dev, thanks :)
+          if(newTitle === "dev" && changedTitle && !showedFunnyJoke){
+            setTitle("thx4PuttingTheTitleBack :)");
+            setShowedFunnyJoke(true);
+          }else{
+            setTitle(newTitle);
+          }     
         }
       }
     }
