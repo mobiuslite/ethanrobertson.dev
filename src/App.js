@@ -3,7 +3,7 @@ import "./custom.scss";
 
 import { Navbar, Nav, Image } from "react-bootstrap";
 import { Route, Link, Navigate, Routes } from "react-router-dom";
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 
 const Home = lazy(() => import("./Pages/Home"));
 const AboutMe = lazy(() => import("./Pages/AboutMe"));
@@ -14,6 +14,8 @@ const Portfolio = lazy(() => import("./Pages/Portfolio"));
 const renderLoader = () => <p />;
 
 function App() {
+
+  const [title, setTitle] = useState("dev")
   const navItemPadding = {
     paddingLeft: 40,
     paddingRight: 40,
@@ -24,11 +26,29 @@ function App() {
     paddingLeft: "1%",
   };
 
+  const typing = (event) => {
+
+    //Stops from users being able to type using the alt, ctrl, and shift key
+    if (!event.altKey && !event.ctrlKey && event.key != "Enter") {
+
+      if (event.key === "Backspace" && title.length > 0) {
+        setTitle(title.substring(0, title.length - 1));
+
+      }
+      else if (event.key !== "Backspace") {
+
+        if ((event.shiftKey && event.key !== "Shift") || !event.shiftKey) {
+          setTitle(title + event.key);
+        }
+      }
+    }
+  }
+
   return (
-    <div className="App" style={{ fontFamily: "Open Sans", width: "100%" }}>
+    <div className="App" style={{ fontFamily: "Share Tech Mono", width: "100%" }} onKeyDown={typing} tabIndex="0">
       <div style={{ backgroundColor: "#10101c", zIndex: 3 }}>
         <div style={{ display: "inline" }}>
-          <Image
+          {/*<Image
             src="Logo.png"
             alt="Ethan Robertson Website Logo"
             style={{
@@ -42,7 +62,19 @@ function App() {
           <Image
             src="images/consoleCursor.gif"
             style={{ height: "2%", width: "2%", marginTop: "55px" }}
-          />
+          />*/}
+          <div style={{ paddingTop: 30, paddingBottom: 30 }}>
+            <h1 style={{ fontSize: 75, color: "white" }}>ethanrobertson<span style={{ color: "#2d96ce" }}>.
+            </span>
+              {title}
+              <span>
+                <Image
+                  src="images/consoleCursor.gif"
+                  style={{ height: "2%", width: "2%" }}
+                />
+              </span>
+            </h1>
+          </div>
         </div>
         <div style={{ paddingBottom: "35px" }}>
           <a
@@ -118,7 +150,7 @@ function App() {
                 to="/contact"
                 style={navItemPadding}
               >
-                <h2 className="customNavItem">Contact Me</h2>
+                <h2 className="customNavItem">Resume/Contact</h2>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -133,15 +165,15 @@ function App() {
         className="gradientPage"
       >
         <Suspense fallback={renderLoader()} style={{}}>
-        <Routes>
-          <Route exact path="/" element={<Navigate to="/home" />} />
-          <Route path="*" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/aboutme" element={<AboutMe />} />
-          <Route path="/games" element={<Games />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+          <Routes>
+            <Route exact path="/" element={<Navigate to="/home" />} />
+            <Route path="*" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/aboutme" element={<AboutMe />} />
+            <Route path="/games" element={<Games />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
         </Suspense>
       </div>
     </div>
