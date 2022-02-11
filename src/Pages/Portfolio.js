@@ -40,7 +40,9 @@ const Portfolio = () => {
         </iframe>
         <Carousel.Caption>
           <h3>Space Invaders Gameplay Example</h3>
-          <p>Made in OpenGL and GLM. Created in less than 24 hours. <a className="customLink" href="files/Space Invaders Demo.zip" download>Download Game</a></p>
+          <p>Made in OpenGL and GLM. Created in less than 24 hours. <a className="customLink" href="files/SpaceInvadersDemo.zip" download>Download Game. </a>
+            Requires <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank"
+              rel="noreferrer">Microsoft Visual C++</a> and a dedicated graphics card</p>
 
         </Carousel.Caption>
       </Carousel.Item>
@@ -68,10 +70,10 @@ const Portfolio = () => {
         <Carousel.Caption>
           <h3>Artificial Intelligence Example</h3>
           <p>Created using Unity. Source Code and Build available on <a
-          className="customLink"
-          href="https://github.com/mobiuslite/SteeringBehavioursDemo"
-          target="_blank"
-          rel="noreferrer">Github</a></p>
+            className="customLink"
+            href="https://github.com/mobiuslite/SteeringBehavioursDemo"
+            target="_blank"
+            rel="noreferrer">Github</a></p>
         </Carousel.Caption>
       </Carousel.Item>
 

@@ -1,0 +1,35 @@
+BeginAnimation:Loop:-1
+
+	//What game object owns this group
+	GameObjectId:10
+	BeginGroup:Serial
+		Command:Serial:WaitSeconds
+		12.0
+		//First 3 floats, position. second float, time, third int, gameobject id (what game object it effects)
+		Command:Serial:MoveTo
+		25.0:8.5:0.0
+		5.0
+		10		
+		Command:Serial:MoveTo
+		-25.0:8.5:0.0
+		0.0
+		10
+	EndGroup
+
+EndAnimation
+
+BeginAnimation
+
+	//What game object owns this group
+	Aliens
+	OnDestroy
+	BeginGroup:Serial
+		Command:Serial:ChangeModel
+		explosion.ply
+		Command:Serial:WaitSeconds
+		0.5
+		Command:Serial:SetActive
+		false
+	EndGroup
+
+EndAnimation

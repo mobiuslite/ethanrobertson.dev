@@ -34,6 +34,10 @@ function App() {
     setChangedTitle(true);
 
     let newTitle = title;
+    if (event.key === "<" || event.key === ">"){
+      return;
+    }
+
     //Stops from ctrl, enter, and alt showing up on the title
     if (!event.altKey && !event.ctrlKey && event.key !== "Enter") {
 
@@ -49,13 +53,13 @@ function App() {
         if ((event.shiftKey && event.key !== "Shift") || !event.shiftKey) {
           newTitle = title + event.key;
 
-          //If the client sent the title back to "dev", show a little thank you note
-          if(newTitle === "dev" && changedTitle && !showedFunnyJoke){
+          //If the client sets the title back to "dev", show a little thank you note
+          if (newTitle === "dev" && changedTitle && !showedFunnyJoke) {
             setTitle("thx4PuttingTheTitleBack :)");
             setShowedFunnyJoke(true);
-          }else{
+          } else {
             setTitle(newTitle);
-          }     
+          }
         }
       }
     }
@@ -66,13 +70,13 @@ function App() {
       <div style={{ backgroundColor: "#10101c", zIndex: 3 }}>
         <div style={{ display: "inline" }}>
           <div style={{ paddingTop: 30, paddingBottom: 30 }}>
-            <h1 style={{fontSize:90, color: "white" }}>ethanrobertson<span style={{ color: "#2d96ce" }}>.
+            <h1 style={{ color: "white" }}>ethanrobertson<span style={{ color: "#2d96ce" }}>.
             </span>
               {title}
               <span>
                 <Image
                   src="images/consoleCursor.gif"
-                  style={{ height: "2%", width: "2%" }}
+                  style={{ height: 30, width: 30 }}
                 />
               </span>
             </h1>
@@ -158,7 +162,7 @@ function App() {
                 href="https://drive.google.com/file/d/1XB5VVQbp2e1MpGmScWxCf8EzgmFA2LnE/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
-                style={Object.assign(navItemPadding, {paddingTop: 8, paddingBottom: 8})}
+                style={Object.assign(navItemPadding, { paddingTop: 8, paddingBottom: 8 })}
               >
                 <h2 className="customNavItem">Resume/Contact</h2>
               </a>
