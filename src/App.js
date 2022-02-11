@@ -34,18 +34,22 @@ function App() {
     setChangedTitle(true);
 
     let newTitle = title;
-    //Stops from users being able to type using the alt, ctrl, and shift key
+    //Stops from ctrl, enter, and alt showing up on the title
     if (!event.altKey && !event.ctrlKey && event.key !== "Enter") {
 
+      //removes a character when pressing backspace
       if (event.key === "Backspace" && title.length > 0) {
         newTitle = title.substring(0, title.length - 1);
         setTitle(newTitle);
       }
+
       else if (event.key !== "Backspace") {
+
+        //Stops the shift key from appearing on the title
         if ((event.shiftKey && event.key !== "Shift") || !event.shiftKey) {
           newTitle = title + event.key;
 
-          //You put it back to dev, thanks :)
+          //If the client sent the title back to "dev", show a little thank you note
           if(newTitle === "dev" && changedTitle && !showedFunnyJoke){
             setTitle("thx4PuttingTheTitleBack :)");
             setShowedFunnyJoke(true);
@@ -61,21 +65,6 @@ function App() {
     <div className="App" style={{ fontFamily: "Share Tech Mono", width: "100%" }} onKeyDown={typing} tabIndex="0">
       <div style={{ backgroundColor: "#10101c", zIndex: 3 }}>
         <div style={{ display: "inline" }}>
-          {/*<Image
-            src="Logo.png"
-            alt="Ethan Robertson Website Logo"
-            style={{
-              height: "auto",
-              width: "50%",
-              maxWidth: "700px",
-              paddingTop: "50px",
-              paddingBottom: "15px",
-            }}
-          />
-          <Image
-            src="images/consoleCursor.gif"
-            style={{ height: "2%", width: "2%", marginTop: "55px" }}
-          />*/}
           <div style={{ paddingTop: 30, paddingBottom: 30 }}>
             <h1 style={{fontSize:90, color: "white" }}>ethanrobertson<span style={{ color: "#2d96ce" }}>.
             </span>
