@@ -25,6 +25,18 @@
   font-family: "Share Tech Mono";
 }
 
+.customLink{
+  font-family: "Share Tech Mono";
+  font-size: 36;
+  color: var(--primary-color);
+  transition: all 0.35s ease-in-out;
+  text-decoration: none;
+}
+.customLink:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
 .customNavItem {
   font-family: "Share Tech Mono";
   font-size: 36;

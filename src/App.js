@@ -7,7 +7,6 @@ import React, { lazy, Suspense, useState } from "react";
 
 const Home = lazy(() => import("./Pages/Home"));
 const AboutMe = lazy(() => import("./Pages/AboutMe"));
-const Contact = lazy(() => import("./Pages/Contact"));
 const Games = lazy(() => import("./Pages/Games"));
 const Portfolio = lazy(() => import("./Pages/Portfolio"));
 
@@ -22,6 +21,7 @@ function App() {
   const navItemPadding = {
     paddingLeft: 40,
     paddingRight: 40,
+    textDecoration: "none"
   };
 
   const linkItemStyle = {
@@ -77,7 +77,7 @@ function App() {
             style={{ height: "2%", width: "2%", marginTop: "55px" }}
           />*/}
           <div style={{ paddingTop: 30, paddingBottom: 30 }}>
-            <h1 style={{ fontSize: 75, color: "white" }}>ethanrobertson<span style={{ color: "#2d96ce" }}>.
+            <h1 style={{fontSize:90, color: "white" }}>ethanrobertson<span style={{ color: "#2d96ce" }}>.
             </span>
               {title}
               <span>
@@ -102,6 +102,14 @@ function App() {
               width="32"
               height="32"
             />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ethan-robertson/"
+            target="_blank"
+            rel="noreferrer"
+            style={linkItemStyle}
+          >
+            <img src="LI-In-Bug.png" alt="linkedin logo" width="32" height="32" />
           </a>
           <a
             href="https://steamcommunity.com/id/MobiusLite/"
@@ -157,14 +165,14 @@ function App() {
               >
                 <h2 className="customNavItem">Portfolio</h2>
               </Nav.Link>
-              <Nav.Link
-                as={Link}
-                href="#contact"
-                to="/contact"
-                style={navItemPadding}
+              <a
+                href="https://drive.google.com/file/d/1XB5VVQbp2e1MpGmScWxCf8EzgmFA2LnE/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+                style={Object.assign(navItemPadding, {paddingTop: 8, paddingBottom: 8})}
               >
                 <h2 className="customNavItem">Resume/Contact</h2>
-              </Nav.Link>
+              </a>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -185,7 +193,6 @@ function App() {
             <Route path="/aboutme" element={<AboutMe />} />
             <Route path="/games" element={<Games />} />
             <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
         </Suspense>
       </div>
