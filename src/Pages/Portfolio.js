@@ -8,25 +8,6 @@ const Portfolio = () => {
 
   return <div className="contentPage">
     <Carousel style={{ width: "70%", margin: "auto" }} interval={null}>
-      <Carousel.Item style={carouselStyle}>
-        <div>
-          <Image src="HouseFront.png" style={carouselStyle} />
-        </div>
-        <Carousel.Caption>
-          <h3>OpenGl Graphics Example 1</h3>
-          <p>Created using OpenGL and Mineways (minecraft model exporter)</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-
-      <Carousel.Item style={carouselStyle}>
-        <div>
-          <Image src="HouseBack.png" style={carouselStyle} />
-        </div>
-        <Carousel.Caption>
-          <h3>OpenGl Graphics Example 2</h3>
-          <p>Created using OpenGL and Mineways (minecraft model exporter)</p>
-        </Carousel.Caption>
-      </Carousel.Item>
 
       <Carousel.Item style={carouselStyle}>
         <iframe
@@ -60,6 +41,37 @@ const Portfolio = () => {
         <Carousel.Caption>
           <h3>Physics Example</h3>
           <p>Created using OpenGL and GLM</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item style={carouselStyle}>
+        <div>
+          <Image src="ginamarie.png" style={{maxHeight: 400, width: "auto"}} />
+        </div>
+        <Carousel.Caption>
+          <h3>Freelance Web Development</h3>
+          <p>Created using React and React Bootstrap. <a href="https://www.ginamariephotography.ca" target="_blank"
+            rel="noreferrer">Visit a Client's Website</a></p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item style={carouselStyle}>
+        <div>
+          <Image src="HouseFront.png" style={carouselStyle} />
+        </div>
+        <Carousel.Caption>
+          <h3>OpenGl Graphics Example 1</h3>
+          <p>Created using OpenGL and Mineways (minecraft model exporter)</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item style={carouselStyle}>
+        <div>
+          <Image src="HouseBack.png" style={carouselStyle} />
+        </div>
+        <Carousel.Caption>
+          <h3>OpenGl Graphics Example 2</h3>
+          <p>Created using OpenGL and Mineways (minecraft model exporter)</p>
         </Carousel.Caption>
       </Carousel.Item>
 
