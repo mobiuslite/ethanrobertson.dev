@@ -10,6 +10,16 @@ const Portfolio = () => {
     <Carousel style={{ width: "70%", margin: "auto" }} interval={null}>
 
       <Carousel.Item style={carouselStyle}>
+        <div>
+          <Image src="opengl_example.gif" style={{maxHeight: 425, width: "auto"}}  />
+        </div>
+        <Carousel.Caption>
+          <h3>OpenGl Graphics Example</h3>
+          <p>Created using OpenGL, GLM, and Mineways (minecraft model exporter)</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item style={carouselStyle}>
         <iframe
           width="75%"
           style={{ maxHeight: 415, maxWidth: 660 }}
@@ -60,8 +70,8 @@ const Portfolio = () => {
           <Image src="HouseFront.png" style={carouselStyle} />
         </div>
         <Carousel.Caption>
-          <h3>OpenGl Graphics Example 1</h3>
-          <p>Created using OpenGL and Mineways (minecraft model exporter)</p>
+          <h3>Night OpenGl Graphics Example 1</h3>
+          <p>Created using OpenGL, GLM, and Mineways (minecraft model exporter)</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -70,8 +80,8 @@ const Portfolio = () => {
           <Image src="HouseBack.png" style={carouselStyle} />
         </div>
         <Carousel.Caption>
-          <h3>OpenGl Graphics Example 2</h3>
-          <p>Created using OpenGL and Mineways (minecraft model exporter)</p>
+          <h3>Night OpenGl Graphics Example 2</h3>
+          <p>Created using OpenGL, GLM, and Mineways (minecraft model exporter)</p>
         </Carousel.Caption>
       </Carousel.Item>
 

@@ -10,7 +10,7 @@ const AboutMe = lazy(() => import("./Pages/AboutMe"));
 const Games = lazy(() => import("./Pages/Games"));
 const Portfolio = lazy(() => import("./Pages/Portfolio"));
 
-const renderLoader = () => <p />;
+const renderLoader = () => <div className="contentPage"></div>;
 
 function App() {
 
