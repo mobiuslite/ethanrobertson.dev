@@ -20,6 +20,16 @@ const Portfolio = () => {
       </Carousel.Item>
 
       <Carousel.Item style={carouselStyle}>
+        <div>
+          <Image src="pbr.png" style={{maxHeight: 425, width: "auto"}}  />
+        </div>
+        <Carousel.Caption>
+          <h3>PBR Rendering Example</h3>
+          <p>Created using OpenGL, GLM, and Mineways (minecraft model exporter)</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item style={carouselStyle}>
         <iframe
           width="75%"
           style={{ maxHeight: 415, maxWidth: 660 }}
