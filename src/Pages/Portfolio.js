@@ -11,21 +11,11 @@ const Portfolio = () => {
 
       <Carousel.Item style={carouselStyle}>
         <div>
-          <Image src="opengl_example.gif" style={{maxHeight: 425, width: "auto"}}  />
-        </div>
-        <Carousel.Caption>
-          <h3>OpenGl Graphics Example</h3>
-          <p>Created using OpenGL, GLM, and Mineways (minecraft model exporter)</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-
-      <Carousel.Item style={carouselStyle}>
-        <div>
           <Image src="pbr.png" style={{maxHeight: 425, width: "auto"}}  />
         </div>
         <Carousel.Caption>
           <h3>PBR Rendering Example</h3>
-          <p>Created using OpenGL, GLM, and Mineways (minecraft model exporter)</p>
+          <p>Created using OpenGL and GLM</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -42,7 +32,7 @@ const Portfolio = () => {
         <Carousel.Caption>
           <h3>Space Invaders Gameplay Example</h3>
           <p>Made in OpenGL and GLM. Created in less than 24 hours. <a className="customLink" href="files/SpaceInvadersDemo.zip" download>Download Game. </a>
-            Requires <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank"
+            Requires <a style={{ color: "#2d96ce" }} href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank"
               rel="noreferrer">Microsoft Visual C++</a> and a dedicated graphics card</p>
 
         </Carousel.Caption>
@@ -70,8 +60,22 @@ const Portfolio = () => {
         </div>
         <Carousel.Caption>
           <h3>Freelance Web Development</h3>
-          <p>Created using React and React Bootstrap. <a href="https://www.ginamariephotography.ca" target="_blank"
+          <p>Created using React and React Bootstrap. <a style={{ color: "#2d96ce" }} href="https://www.ginamariephotography.ca" target="_blank"
             rel="noreferrer">Visit a Client's Website</a></p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item style={carouselStyle}>
+        <div>
+          <Image src="ai pic.png" style={carouselStyle} />
+        </div>
+        <Carousel.Caption>
+          <h3>Artificial Intelligence Example</h3>
+          <p>Created using Unity. Source Code and Build available on <a
+            className="customLink"
+            href="https://github.com/mobiuslite/SteeringBehavioursDemo"
+            target="_blank"
+            rel="noreferrer">Github</a></p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -92,20 +96,6 @@ const Portfolio = () => {
         <Carousel.Caption>
           <h3>Night OpenGl Graphics Example 2</h3>
           <p>Created using OpenGL, GLM, and Mineways (minecraft model exporter)</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-
-      <Carousel.Item style={carouselStyle}>
-        <div>
-          <Image src="ai pic.png" style={carouselStyle} />
-        </div>
-        <Carousel.Caption>
-          <h3>Artificial Intelligence Example</h3>
-          <p>Created using Unity. Source Code and Build available on <a
-            className="customLink"
-            href="https://github.com/mobiuslite/SteeringBehavioursDemo"
-            target="_blank"
-            rel="noreferrer">Github</a></p>
         </Carousel.Caption>
       </Carousel.Item>
 
